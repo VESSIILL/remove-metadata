@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 from PIL import Image
 import os
+import tkinter as tk
 
 # Глобальный список для хранения путей обработанных изображений
 processed_images = []
@@ -44,21 +45,26 @@ def select_images():
     if selected_images:
         status_label.config(text=f"{len(selected_images)} images selected. Ready to remove metadata.")
 
+
+
+# BUTTONS
 app = tk.Tk()
 app.title("Metadata Remover")
 
+big_font = ('Segoe UI Black', 40)   # Font & Size
+
 selected_images = []
 
-select_button = tk.Button(app, text="Select Images", command=select_images)
+select_button = tk.Button(app, text="Select Images", command=select_images, fg="black", width=20, height=2, font=big_font)
 select_button.pack()
 
-remove_button = tk.Button(app, text="Remove Metadata", command=remove_metadata)
+remove_button = tk.Button(app, text="Remove Metadata", command=remove_metadata, fg="black", width=20, height=2, font=big_font)
 remove_button.pack()
 
-save_button = tk.Button(app, text="Save Images", command=save_images)
+save_button = tk.Button(app, text="Save Images", command=save_images, fg="black", width=20, height=2, font=big_font)
 save_button.pack()
 
-status_label = tk.Label(app, text="No images selected.")
+status_label = tk.Label(app, text="No images selected.", bg="lightgray", width=20, height=2)
 status_label.pack()
 
 app.mainloop()
